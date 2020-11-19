@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'books/style.css' %}">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le blog de Béa</title>
+</head>
+<body>
+
+<div class="header">
+    <h2>Le blog de Béa</h2>
+</div>
+
+{% block content_core %}{% endblock %}
+
+<div class="footer">
+    <h2> Footer.</h2>
+</div>
+
+</body>
+</html>
