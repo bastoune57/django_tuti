@@ -15,8 +15,8 @@ class IndexView(generic.ListView):
         Excludes any article in the future
         """
         return Article.objects.filter(
-                pub_date__lte=timezone.now()
-                ).order_by('-pub_date')[:5]
+                a_pub_date__lte=timezone.now()
+                ).order_by('-a_pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
@@ -28,5 +28,5 @@ class DetailView(generic.DetailView):
         Excludes any article in the future
         """
         return Article.objects.filter(
-                pub_date__lte=timezone.now()
+                a_pub_date__lte=timezone.now()
                 )
