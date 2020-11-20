@@ -4,15 +4,52 @@ body {
   background: #f1f1f1;
 }
 
-/* Header/Blog Title */
-.header {
-  padding: 10px;
+/* Header / Menu */
+.header{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+.header ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline-block;
+  float left;
+}
+
+.header li a {
+  display: block;
+  background-color: #8533ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header li a:hover{
+  background-color: #6600cc;
+}
+
+.header a{
+  color: white;
+  padding: 10px 16px;
+}
+
+/* Blog Title */
+.maintitle {
   text-align: center;
   margin: auto;
+  padding: 10px;
   background: #8533ff;
   width: 400px;
   font-size: 20px;
   color: white;
+  margin-bottom: 30px;
 }
 
 /* Create two unequal columns that floats next to each other */

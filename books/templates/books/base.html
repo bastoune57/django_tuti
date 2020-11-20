@@ -11,9 +11,12 @@
 <body style="background-image:url({% static 'books/images/library.jpg' %});">
 
 <div class="header">
-    <h2>LES MOTS ET L`ÉMOI</h2>
-    <h3>===== Blog littéraire =====</h3>
-    <h4>Béatrice Arvet</h4>
+<ul>
+  <li><a href="{% url 'books:index' %}">Blog</a></li>
+  <li><a href="{% url 'books:index' %}">À Propos</a></li>
+  <li><a href="{% url 'books:index' %}">Coups de coeur</a></li>
+  <li><a href="{% url 'books:index' %}">Contact</a></li>
+</ul>
 </div>
 
 {% block content_core %}{% endblock %}
