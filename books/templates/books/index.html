@@ -1,34 +1,41 @@
-{% extends "polls/base.html" %}
+{% extends "books/base.html" %}
 
 {% block content_core %}
+
 <div class="row">
   <div class="leftcolumn">
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-    </div>
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-    </div>
+{% for article in latest_articles_list %}
+    <a href= "{% url 'books:detail' article.id %}">
+      <div class="card" >
+        {% load static %}
+        <div class="leftbook" style="background-image:url({% static 'books/images/book_coffee.jpg' %});">
+          <div class="booktitle">
+            <h2>{{ article.a_title }}</h2>
+          </div>
+          <div class="authortitle">
+            <h2>{{ article.a_author }}</h2>
+          </div>
+        </div>
+        <div class="rightbook">
+          <h5>{{ article.a_editor }}</h5>
+          <h5>Article from the {{ article.a_pub_date}} Temps de lecture: {{ article.a_reading_time }} minutes.</h5>
+          <p>Some text..</p>
+        </div>
+      </div>
+    </a>
+{% endfor %}
   </div>
   <div class="rightcolumn">
-    <div class="card">
+    <div class="rcard">
       <h2>About Me</h2>
       <div class="fakeimg" style="height:100px;">Image</div>
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
     </div>
-    <div class="card">
+    <div class="rcard">
       <h3>Popular Post</h3>
       <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
     </div>
-    <div class="card">
+    <div class="rcard">
       <h3>Follow Me</h3>
       <p>Some text..</p>
     </div>

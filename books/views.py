@@ -8,7 +8,7 @@ from .models import Article
 
 class IndexView(generic.ListView):
     template_name = 'books/index.html'
-    context_object_name = 'latest_book_list'
+    context_object_name = 'latest_articles_list'
 
     def get_queryset(self):
         """
@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
         """
         return Article.objects.filter(
                 a_pub_date__lte=timezone.now()
-                ).order_by('-a_pub_date')[:5]
+                ).order_by('-a_pub_date')[:25]
 
 
 class DetailView(generic.DetailView):
